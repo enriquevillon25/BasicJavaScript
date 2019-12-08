@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Ejercicio </title>
+    <style>
+    .container{
+        display: grid;
+        grid-template: 250px 250px 50px/ 1fr 1fr 1fr;
+        border-radius: 52px;
+        grid-gap: 20px;
+        justify-content: space-between;
+        font-family: monospace;
+    }
+    .caja{
+        text-align :center;
+        color: black;
+        font-size: 3em;
+        border: 2px solid brown;
+        border-radius: 50px;
+        background: brown;
+        padding-top: 80px;
+
+    }
+    .cajaboton{
+        grid-column: 2/ span 1;
+        padding-left: 60px;
+    }
+    .boton{
+        background: #eb94d0;
+        background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
+  background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
+  background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
+  background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
+  background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+text-shadow: 3px 2px 1px #9daef5;
+  -webkit-box-shadow: 6px 5px 24px #666666;
+  -moz-box-shadow: 6px 5px 24px #666666;
+  box-shadow: 6px 5px 24px #666666;
+font-family: Arial;
+  color: #fafafa;
+  font-size: 27px;
+  padding: 19px;
+  text-decoration: none;
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+<div  id='personaje1'class="caja">
+    ENRIQUE
+</div>
+<div id='personaje2'class="caja">
+    ANDRE
+</div>
+<div id='personaje3'class="caja">
+    ANDERSON
+</div>
+<div id='personaje4'class="caja">
+    LUCERO
+</div>
+<div id='personaje5' class="caja">
+    ESTEFANIE
+</div>
+<div id='personaje6'class="caja">
+    CAMILA
+</div>
+<div id="cajaboton" class="cajaboton">
+<button id="boton" class="boton" onclick="changeColor('none');">DELETE COLOR </button>
+</div>
+</div>
+<script>
+
+const persona1= document.getElementById('personaje1');
+const persona2=document.getElementById('personaje2');
+const persona3=document.getElementById('personaje3');
+const persona4= document.getElementById('personaje4');
+const persona5= document.getElementById('personaje5');
+const persona6= document.getElementById('personaje6');
+
+const personas=[persona1, persona2, persona3, persona4,
+persona5, persona6];
+
+
+// function changeColor(newcolor){
+//     persona1.style.background = newcolor
+// }
+function changeColor(newcolor){
+for(var i=0; i<6;i++){
+    personas[i].style.background = newcolor;
+}
+}
+
+// const arr=[1,2,3,4,5,6];
+// function consolaarr(){
+// arr.forEach(flag1=>{
+//     console.log(flag1);
+// })
+// }
+// consolaarr();
+</script>
+    
+</body>
+</html>

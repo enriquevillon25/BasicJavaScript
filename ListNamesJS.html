@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ <div class="boton">
+     <form>
+     <input id="nombre" type="text" class="texto" placeholder="Escribe el nombre aquí">  
+     <button type="submit" class="boton" onclick=listarnombres(event)> LISTAR NAMES </button>
+    </form> 
+</div>
+<div id="mostrarnombres">
+
+</div>
+ <script>
+function listarnombres(evt){
+    evt.preventDefault();
+ var cuadrotexto= document.getElementById("nombre").value;
+
+ var nombre= "<li>" + cuadrotexto +"</li>";
+ var looknames=document.getElementById("mostrarnombres");
+ looknames.innerHTML += nombre;
+}
+ </script> 
+</body>
+</html>

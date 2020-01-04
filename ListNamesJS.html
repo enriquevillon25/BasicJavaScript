@@ -5,16 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .all-box{
+            display: grid;
+            grid-template-columns: 250px 250px;
+            grid-template-rows: 150px 200px;
+            grid-template-areas: ". formulario"
+                                 ". nombrecaja " ;
+                                 
+
+        }
+
+        .formulario-box{
+                grid-area: formulario;
+                border: 1px solid  blueviolet;
+                background:cadetblue;
+               
+        }
+        .formulario{
+            
+        }
+        .caja{
+            border: 1px solid brown;
+            grid-area: nombrecaja;
+        }
+        .texto{
+            
+        }
+        .btn{
+            background: white;
+
+        }
+        .btn:hover{
+            
+            -webkit-animation: 1s cambiatamaño 1;
+        }
+
+        @-webkit-keyframes cambiatamaño{
+            50%{
+                background: cadetblue;
+                transform: scaleX(1.4);
+            }
+        }
+    </style>
 </head>
 <body>
- <div class="boton">
-     <form>
+<div class="all-box">
+<div class="formulario-box">
+     <form class="formulario" id="formulario">
      <input id="nombre" type="text" class="texto" placeholder="Escribe el nombre aquí">  
-     <button type="submit" class="boton" onclick=listarnombres(event)> LISTAR NAMES </button>
+     <button type="submit" class="btn" onclick=listarnombres(event)> LISTAR NAMES </button>
     </form> 
 </div>
-<div id="mostrarnombres">
+<div id="mostrarnombres" class="caja">
 
+</div>
 </div>
  <script>
 function listarnombres(evt){
@@ -24,6 +69,9 @@ function listarnombres(evt){
  var nombre= "<li>" + cuadrotexto +"</li>";
  var looknames=document.getElementById("mostrarnombres");
  looknames.innerHTML += nombre;
+ cuadrotexto.innerHTML= " ";
+ document.getElementById("formulario").reset();
+
 }
  </script> 
 </body>
